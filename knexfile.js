@@ -1,5 +1,3 @@
-// Update with your config settings.
-
 module.exports = {
 
   development: {
@@ -14,6 +12,8 @@ module.exports = {
     seeds: {
       directory: './data/seeds'
     },
+
+    //create it before seeding. this is for foreign keys.
     pool: {
       afterCreate: (connection, done) => {
         connection.run('PRAGMA foreign_keys = ON', done);
